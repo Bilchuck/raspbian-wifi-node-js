@@ -7,7 +7,7 @@ const parseIwlistOutput = output => _.compose(
     _.filter(length),
     _.split("\n"),
 )
-const isCeail = el.includes("Cell");
+const isCeail = rl => el.includes("Cell");
 const byCeils = (acc, row) => isCeail(row) ? [...acc, []] : _.over(_.last, _.push(row), acc);
 
 const buildWifiDTO = lines => ({
