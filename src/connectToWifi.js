@@ -4,7 +4,7 @@ const reconfigWifiSettings = require("./reconfigWifiSettings");
 
 const WIFI_CONFIG_FILE_PATH = `/etc/wpa_supplicant/wpa_supplicant.conf`;
 
-const log = (text, any) => {
+const log = text => any => {
     console.log(text);
     return any;
 }
