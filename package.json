@@ -1,6 +1,6 @@
 {
-  "name": "raspbian-wifi-node-js",
-  "version": "1.0.0",
+  "name": "raspbian-wifi-node-jsgit",
+  "version": "1.0.1",
   "description": "",
   "main": "src/index.js",
   "scripts": {
