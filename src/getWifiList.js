@@ -3,7 +3,7 @@ const parseIwlistOutput = require("./parseIwlistOutput");
 
 const getWifiList = () => new Promise((resolve, reject) => {
     console.log("Start getting wifi list..");
-    cmd.get("iwlist wlan0 scan", (err, buffer) => {
+    cmd.get("iwlist wlan0 scan", (cmdError, buffer) => {
         if (cmdError) {
             reject(err);
         } else {
