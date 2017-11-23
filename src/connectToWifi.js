@@ -4,15 +4,6 @@ const reconfigWifiSettings = require("./reconfigWifiSettings");
 
 const WIFI_CONFIG_FILE_PATH = `/etc/wpa_supplicant/wpa_supplicant.conf`;
 
-const connectToWifi = _.compose(
-    log("Wifi configuring finished!"),
-    reconfigWifiSettings,
-    log('reconfiguring wifi settings'),
-    writeConfig,
-    log('Writing new wifi config to the file'),
-    buildWifiConfigFile,
-    log("Starting wifi connecting.."),
-);
 const log = (text, any) => {
     console.log(text);
     return any;
@@ -29,3 +20,14 @@ network={
     key_mgmt="${wifiConfig.encryption}"
 }
 `;
+const connectToWifi = _.compose(
+    log("Wifi configuring finished!"),
+    reconfigWifiSettings,
+    log('reconfiguring wifi settings'),
+    writeConfig,
+    log('Writing new wifi config to the file'),
+    buildWifiConfigFile,
+    log("Starting wifi connecting.."),
+);
+
+module.exports = connectToWifi;
