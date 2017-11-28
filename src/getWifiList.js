@@ -12,11 +12,11 @@ const getWifiList = () => new Promise((resolve, reject) => {
             try {
                 console.log("Start parsing wifi list..");
                 const wifiList = parseIwlistOutput(buffer);
+                resolve(wifiList);
             } catch (parseError) {
                 console.error("Can't parse wifi list");
                 reject(parseError);
             }
-            resolve();
         }
     });
 });
